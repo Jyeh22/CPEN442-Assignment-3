@@ -20,14 +20,14 @@ n = len(set)
 k = 1
 blob = "a"
 prevhash = "a9c1ae3f4fc29d0be9113a42090a5ef9fdef93f5ec4777a008873972e60bb532"
-idofhash = sha256("999".encode('utf-8')).hexdigest()
-input_ = "CPEN 442 Coin" + "2022" + prevhash + blob + idofhash
+idofminer = sha256("999".encode('utf-8')).hexdigest()
+input_ = "CPEN 442 Coin" + "2022" + prevhash + blob + idofminer
 
 while(k<5):
     stringset = []
     addAllKLength(set, "", n, k, stringset)
     for blob in stringset:
-        input_ = "CPEN 442 Coin" + "2022" + prevhash + blob + idofhash
+        input_ = "CPEN 442 Coin" + "2022" + prevhash + blob + idofminer
         if (sha256(input_.encode('utf-8')).hexdigest()[0:4]) == "0000":
             print(sha256(input_.encode('utf-8')).hexdigest())
             print(blob)
